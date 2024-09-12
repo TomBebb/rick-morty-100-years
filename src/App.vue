@@ -6,6 +6,6 @@ import type { ColorKind } from './models'
 <template>
   <div class="p-2 flex flex-col h-screen w-full b">
     <div>Hellop!</div>
-    <MyButton color="primary" align="center">Demo</MyButton>
+    <MyButton color="primary" align="center" icon="mdi:tick">Do</MyButton>
   </div>
 </template>
