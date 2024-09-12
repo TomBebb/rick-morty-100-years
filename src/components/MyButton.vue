@@ -12,12 +12,15 @@ const emit = defineSlots<{ click: [MouseEvent] }>()
 </script>
 <template>
   <button
-    :class="`bg-${color} border-${color}-border`"
-    class="flex flex-row gap-2 items-center px-3 py-2 rounded text-white border-[0.3em] hover:border-4 transition"
+    :class="`bg-${color} border-${color}-border text-${color}-text`"
+    class="flex flex-row gap-2 items-center px-3 py-2 rounded border-[0.3em] hover:border-4 transition"
     v-bind="props"
   >
-    <Icon v-if="icon" icon="mdi:home" />
-    <div class="flex-1" :class="`text-${align ?? 'left'}`">
+    <Icon v-if="icon" :icon />
+    <div
+      class="flex-1 uppercase first-letter:text-xl"
+      :class="`text-${align ?? 'left'}`"
+    >
       <slot />
     </div>
   </button>

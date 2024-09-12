@@ -4,7 +4,7 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   safelist: [
     {
-      pattern: /.*primary.*/,
+      pattern: /.*(primary|secondary|success|danger).*/,
     },
     'text-left',
   ],
@@ -12,8 +12,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-border': '#5d4e6d',
-        primary: '#4f345a',
+        'success-border': '#1f1',
+        'success-text': '#fff',
+        success: '#191',
+        'danger-border': '#f11',
+        'danger-text': '#fff',
+        danger: '#911',
+        'primary-text': '#fff',
+        primary: '#412234',
+        'primary-border': '#ead7d7',
+        'primary-text': '#fff',
+        primary: '#412234',
+        'secondary-text': '#fff',
+        secondary: '#6d466b',
       },
     },
   },
