@@ -6,8 +6,13 @@ export default {
     {
       pattern: /.*(primary|secondary|success|danger).*/,
     },
+    {
+      pattern: /((md|lg):)?(primary|secondary|success|danger).*/,
+    },
     'text-left',
     'text-right',
+    'md:text-left',
+    'md:text-right',
   ],
   //content: [],
   theme: {
