@@ -20,29 +20,32 @@ const data = computedAsync<PaginatedResults<T>>(
     results: [],
   }
 )
-const isLastPage = computed(() => currPage.value === data.value.info.pages)
 </script>
 <template>
-  <div class="flex flex-row gap-2">
+  <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
     <MyButton
       icon="mdi:arrow-left"
-      align="left"
-      class="flex-1"
+      class="md:text-l text-center"
+      align="center"
+      md-align="left"
       :disabled="currPage === 1"
       @click="currPage--"
       >Prev</MyButton
     >
     <MyButton
       icon="mdi:arrow-right"
-      align="right"
+      align="center"
+      md-align="right"
       class="flex-1"
       :disabled="currPage === data.info.pages"
       @click="currPage++"
       >Next</MyButton
     >
   </div>
-  <div class="grid grid-cols-3 gap-3 p-3">
-    <div v-for="item in data.results" class="border p-4">
+  <div
+    class="grid grid-cols-1 gap-3 p-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+  >
+    <div v-for="item in data.results" class="rounded rounded-sm border p-4">
       <slot name="item" :item="item" />
     </div>
   </div>
