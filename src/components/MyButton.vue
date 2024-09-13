@@ -8,6 +8,7 @@ const { icon, color, align, ...props } = withDefaults(
     align?: TextAlign
     mdAlign?: TextAlign
     disabled?: boolean
+    label?: string
   }>(),
   { color: 'primary', align: 'left', disabled: false }
 )
@@ -23,10 +24,11 @@ const emit = defineSlots<{ click: [MouseEvent] }>()
   >
     <Icon v-if="icon" :icon />
     <div
+      v-if="label"
       class="flex-1 uppercase first-letter:text-xl"
       :class="`text-${align} md:text-${props.mdAlign}`"
     >
-      <slot />
+      {{ label }}
     </div>
   </button>
 </template>

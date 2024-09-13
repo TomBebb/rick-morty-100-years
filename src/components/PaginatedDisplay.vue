@@ -37,7 +37,11 @@ const data = computedAsync<PaginatedResults<T>>(
       v-model="searchInput"
       placeholder="Enter search query"
     />
-    <MyButton icon="mdi:search" @click="search = searchInput">Search</MyButton>
+    <MyButton
+      icon="mdi:search"
+      @click="search = searchInput"
+      aria-label="Search"
+    />
   </div>
   <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
     <MyButton
@@ -47,8 +51,8 @@ const data = computedAsync<PaginatedResults<T>>(
       md-align="left"
       :disabled="currPage === 1"
       @click="currPage--"
-      >Prev</MyButton
-    >
+      label="Prev"
+    />
     <MyButton
       icon="mdi:arrow-right"
       align="center"
@@ -56,8 +60,8 @@ const data = computedAsync<PaginatedResults<T>>(
       class="flex-1"
       :disabled="currPage === data.info.pages"
       @click="currPage++"
-      >Next</MyButton
-    >
+      label="Next"
+    />
   </div>
   <div
     class="grid grid-cols-1 gap-3 p-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
