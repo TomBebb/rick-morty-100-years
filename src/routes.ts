@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { NavItem } from './models'
 import HomeView from './views/HomeView.vue'
 import CharactersView from './views/CharactersView.vue'
+import LocationsView from './views/LocationsView.vue'
+import EpisodesView from './views/EpisodesView.vue'
 
 export const routes: NavItem[] = [
   {
@@ -22,10 +24,18 @@ export const routes: NavItem[] = [
   },
   {
     path: '/locations',
-    component: CharactersView,
+    component: LocationsView,
     name: 'Locations',
     props: {
       icon: 'mdi:place',
+    },
+  },
+  {
+    path: '/episodes',
+    component: EpisodesView,
+    name: 'Episdoes',
+    props: {
+      icon: 'mdi:item',
     },
   },
 ]
