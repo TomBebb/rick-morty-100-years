@@ -5,6 +5,7 @@ import MyButton from './components/MyButton.vue'
 <template>
   <div class="p-2 flex flex-col h-screen w-full b">
     <div>Hellop!</div>
+    <MyButton>Defaults</MyButton>
     <MyButton color="primary" align="center" icon="mdi:tick">Primary</MyButton>
     <MyButton color="secondary" align="center" icon="mdi:tick"
       >Secondary</MyButton

@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import type { ColorKind, TextAlign } from '../models'
-const {
-  icon,
-  color = 'primary',
-  align = 'left',
-  ...props
-} = defineProps<{ icon?: string; color?: ColorKind; align?: TextAlign }>()
+const { icon, color, align, ...props } = withDefaults(
+  defineProps<{ icon?: string; color?: ColorKind; align?: TextAlign }>(),
+  { color: 'primary', align: 'left' }
+)
 
 const emit = defineSlots<{ click: [MouseEvent] }>()
 </script>
@@ -17,10 +15,7 @@ const emit = defineSlots<{ click: [MouseEvent] }>()
     v-bind="props"
   >
     <Icon v-if="icon" :icon />
-    <div
-      class="flex-1 uppercase first-letter:text-xl"
-      :class="`text-${align ?? 'left'}`"
-    >
+    <div class="flex-1 uppercase first-letter:text-xl" :class="`text-${align}`">
       <slot />
     </div>
   </button>
