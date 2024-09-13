@@ -2,15 +2,21 @@
 import { Icon } from '@iconify/vue'
 import type { ColorKind, TextAlign } from '../models'
 const { icon, color, align, ...props } = withDefaults(
-  defineProps<{ icon?: string; color?: ColorKind; align?: TextAlign }>(),
-  { color: 'primary', align: 'left' }
+  defineProps<{
+    icon?: string
+    color?: ColorKind
+    align?: TextAlign
+    disabled?: boolean
+  }>(),
+  { color: 'primary', align: 'left', disabled: false }
 )
 
 const emit = defineSlots<{ click: [MouseEvent] }>()
 </script>
 <template>
   <button
-    :class="`bg-${color} border-${color}-border text-${color}-text`"
+    :class="`bg-${color} border-${color}-border text-${color}-text ${disabled && 'opacity-50'}`"
+    :aria-disabled="disabled"
     class="flex flex-row gap-2 items-center px-3 py-2 rounded border-[0.3em] hover:border-4 transition"
     v-bind="props"
   >
