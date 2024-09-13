@@ -7,16 +7,6 @@ const curr = useRoute()
 
 <template>
   <NavBar />
-  <div class="b flex h-screen w-full flex-col p-2">
-    <div>{{ curr.name }}</div>
-    <MyButton>Defaults</MyButton>
-    <MyButton color="primary" align="center" icon="mdi:tick">Primary</MyButton>
-    <MyButton color="secondary" align="center" icon="mdi:tick"
-      >Secondary</MyButton
-    >
-    <MyButton color="success" align="center" icon="mdi:tick">Success</MyButton>
-    <MyButton color="danger" align="center" icon="mdi:error">Danger</MyButton>
 
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
