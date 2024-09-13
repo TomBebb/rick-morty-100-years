@@ -16,9 +16,9 @@ const emit = defineSlots<{ click: [MouseEvent] }>()
 </script>
 <template>
   <button
-    :class="`bg-${color} border-${color}-border text-${color}-text ${disabled && 'opacity-50 pointer-events-none'}`"
+    :class="`bg-${color} border-${color}-border text-${color}-text ${disabled && 'pointer-events-none opacity-50'}`"
     :aria-disabled="disabled"
-    class="flex flex-row gap-2 items-center px-3 py-2 rounded border-[0.3em] hover:border-4 transition"
+    class="flex flex-row items-center gap-2 rounded border-[0.3em] px-3 py-2 transition hover:border-4"
     v-bind="props"
   >
     <Icon v-if="icon" :icon />

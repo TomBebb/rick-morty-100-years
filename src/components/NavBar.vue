@@ -6,12 +6,12 @@ const curr = useRoute()
 </script>
 <template>
   <nav
-    class="bg-primary text-primary-text h-10 top-0 sticky flex flex-row gap-2 items-center px-3"
+    class="sticky top-0 flex h-10 flex-row items-center gap-2 bg-primary px-3 text-primary-text"
   >
     <RouterLink
       v-for="item in routes"
       :to="item.path"
-      class="border px-3 flex flex-row gap-1 items-center"
+      class="flex flex-row items-center gap-1 border px-3"
       :class="{ 'opacity-50': item.path === curr.path }"
     >
       <Icon v-if="item.props.icon" :icon="item.props.icon!" />

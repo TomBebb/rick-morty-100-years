@@ -7,7 +7,7 @@ const curr = useRoute()
 
 <template>
   <NavBar />
-  <div class="p-2 flex flex-col h-screen w-full b">
+  <div class="b flex h-screen w-full flex-col p-2">
     <div>{{ curr.name }}</div>
     <MyButton>Defaults</MyButton>
     <MyButton color="primary" align="center" icon="mdi:tick">Primary</MyButton>
