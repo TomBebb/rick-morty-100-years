@@ -14,6 +14,9 @@ importers:
       vue:
         specifier: ^3.4.37
         version: 3.4.38(typescript@5.5.4)
+      vue-router:
+        specifier: ^4.4.5
+        version: 4.4.5(vue@3.4.38(typescript@5.5.4))
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.10.4
@@ -458,6 +461,9 @@ packages:
 
   '@vue/compiler-ssr@3.4.38':
     resolution: {integrity: sha512-YXznKFQ8dxYpAz9zLuVvfcXhc31FSPFDcqr0kyujbOwNhlmaNvL2QfIy+RZeJgSn5Fk54CWoEUeW+NVBAogGaw==}
+
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
 
   '@vue/reactivity@3.4.38':
     resolution: {integrity: sha512-4vl4wMMVniLsSYYeldAKzbk72+D3hUnkw9z8lDeJacTxAkXeDAP1uE9xr2+aKIN0ipOL8EG2GPouVTH6yF7Gnw==}
@@ -1200,6 +1206,11 @@ packages:
       terser:
         optional: true
 
+  vue-router@4.4.5:
+    resolution: {integrity: sha512-4fKZygS8cH1yCyuabAXGUAsyi1b2/o/OKgu/RUb+znIYOxPRxdkytJEx+0wGcpBE1pX6vUgh5jwWOKRGvuA/7Q==}
+    peerDependencies:
+      vue: ^3.2.0
+
   vue@3.4.38:
     resolution: {integrity: sha512-f0ZgN+mZ5KFgVv9wz0f4OgVKukoXtS3nwET4c2vLBGQR50aI8G0cqbFtLlX9Yiyg3LFGBitruPHt2PxwTduJEw==}
     peerDependencies:
@@ -1577,6 +1588,8 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.4.38
       '@vue/shared': 3.4.38
+
+  '@vue/devtools-api@6.6.4': {}
 
   '@vue/reactivity@3.4.38':
     dependencies:
@@ -2296,6 +2309,11 @@ snapshots:
       rollup: 4.21.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  vue-router@4.4.5(vue@3.4.38(typescript@5.5.4)):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.4.38(typescript@5.5.4)
 
   vue@3.4.38(typescript@5.5.4):
     dependencies:
