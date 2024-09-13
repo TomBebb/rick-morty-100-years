@@ -5,14 +5,17 @@ const iconByGender: Record<CharacterGender, string> = {
   Female: 'mdi:gender-female',
   Male: 'mdi:gender-male',
   Genderless: 'mdi:human-genderless',
-  unknown: 'mdi:question',
+  unknown: '',
 }
 defineProps<{ data: Character }>()
 </script>
 <template>
   <div class="flex flex-col items-center gap-2">
     <div class="flex flex-row items-center gap-2 font-bold">
-      <Icon :icon="iconByGender[data.gender]" />
+      <Icon
+        v-if="data.gender !== 'unknown'"
+        :icon="iconByGender[data.gender]"
+      />
 
       {{ data.name }}
     </div>
