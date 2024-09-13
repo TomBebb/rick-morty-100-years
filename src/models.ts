@@ -7,7 +7,10 @@ export interface NavItem extends RouteRecordSingleView {
     icon?: string
   }
 }
-
+export interface BasePaginatedItem {
+  id: number
+  name: string
+}
 export interface PaginatedResults<T> {
   info: {
     count: number
@@ -30,9 +33,7 @@ export const enum CharacterGender {
   Genderless = 'Genderless',
   Unknown = 'unknown',
 }
-export interface Character {
-  id: number
-  name: string
+export interface Character extends BasePaginatedItem {
   status: CharacterStatus
   species: string
   type: string

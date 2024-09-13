@@ -1,13 +1,22 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts" generic="T extends BasePaginatedItem">
 import { computedAsync } from '@vueuse/core'
-import { PaginatedResults } from '../models'
+import { BasePaginatedItem, PaginatedResults } from '../models'
 import { useRouteQuery } from '@vueuse/router'
 import MyButton from './MyButton.vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 const { endpoint } = defineProps<{ endpoint: string }>()
 const currPage = useRouteQuery('page', '1', { transform: Number })
+const search = useRouteQuery<string>('search')
+const searchInput = ref<string>(String(search.value))
+const urlParams = computed<URLSearchParams>(() => {
+  const ps = new URLSearchParams()
+  ps.set('page', currPage.value.toString())
+
+  if (search.value) ps.set('name', search.value)
+  return ps
+})
 const url = computed(
-  () => `https://rickandmortyapi.com/api/${endpoint}?page=${currPage.value}`
+  () => `https://rickandmortyapi.com/api/${endpoint}?${urlParams.value}`
 )
 
 const data = computedAsync<PaginatedResults<T>>(
@@ -22,6 +31,14 @@ const data = computedAsync<PaginatedResults<T>>(
 )
 </script>
 <template>
+  <div class="flex flex-row gap-2 p-3">
+    <input
+      class="flex-1 border-2 border-gray-600"
+      v-model="searchInput"
+      placeholder="Enter search query"
+    />
+    <MyButton icon="mdi:search" @click="search = searchInput">Search</MyButton>
+  </div>
   <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
     <MyButton
       icon="mdi:arrow-left"
