@@ -7,6 +7,7 @@ export default {
       pattern: /.*(primary|secondary|success|danger).*/,
     },
     'text-left',
+    'text-right',
   ],
   //content: [],
   theme: {
