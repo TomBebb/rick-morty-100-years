@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import MyButton from './components/MyButton.vue'
-import type { ColorKind } from './models'
 </script>
 
 <template>

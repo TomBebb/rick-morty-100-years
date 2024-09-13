@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ColorKind, TextAlign } from '../models'
 import { Icon } from '@iconify/vue'
+import type { ColorKind, TextAlign } from '../models'
 const {
   icon,
   color = 'primary',
