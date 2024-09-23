@@ -45,3 +45,10 @@ export interface Character extends BasePaginatedItem {
   url: string
   created: string
 }
+
+export interface Episode extends BasePaginatedItem {
+  air_date: string
+  created: string
+  episode: string
+  characters: string[]
+}

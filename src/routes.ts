@@ -33,9 +33,9 @@ export const routes: NavItem[] = [
   {
     path: '/episodes',
     component: EpisodesView,
-    name: 'Episdoes',
+    name: 'Episodes',
     props: {
-      icon: 'mdi:item',
+      icon: 'mdi:tv',
     },
   },
 ]
