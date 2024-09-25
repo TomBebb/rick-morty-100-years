@@ -53,3 +53,10 @@ export interface Episode extends BasePaginatedItem {
   episode: string
   characters: string[]
 }
+
+export interface Location extends BasePaginatedItem {
+  type: string
+  dimension: string
+  residents: string[]
+  created: string
+}
