@@ -5,6 +5,7 @@ export type TextAlign = 'center' | 'left' | 'right'
 export interface NavItem extends RouteRecordSingleView {
   props: {
     icon?: string
+    desc: string
   }
 }
 export interface BasePaginatedItem {

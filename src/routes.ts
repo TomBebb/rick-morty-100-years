@@ -12,6 +12,7 @@ export const routes: NavItem[] = [
     name: 'Home',
     props: {
       icon: 'mdi:home',
+      desc: '',
     },
   },
   {
@@ -20,6 +21,7 @@ export const routes: NavItem[] = [
     name: 'Characters',
     props: {
       icon: 'mdi:users',
+      desc: 'Browse/Search Rick & Morty Characters',
     },
   },
   {
@@ -28,6 +30,7 @@ export const routes: NavItem[] = [
     name: 'Locations',
     props: {
       icon: 'mdi:place',
+      desc: 'Browse/Search Rick & Morty Locations',
     },
   },
   {
@@ -36,6 +39,7 @@ export const routes: NavItem[] = [
     name: 'Episodes',
     props: {
       icon: 'mdi:tv',
+      desc: 'Browse/Search Rick & Morty Episodes',
     },
   },
 ]
